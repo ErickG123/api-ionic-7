@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="ID ou Nome"></ion-input>
+  </ion-item>
 
+  <ion-card *ngFor="let pokemon of pokemons">
+    <ion-card-content>
+      <ion-img [src]="pokemon.images.small" alt="Image do {{ pokemon.name }}"></ion-img>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando dados..."> </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

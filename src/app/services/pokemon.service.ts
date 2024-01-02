@@ -20,7 +20,7 @@ export class PokemonService {
 
   getPokemons(page = 1) {
     return this.http.get<ApiResult>(
-      `${environment.baseUrl}?page=${page}`
+      `${environment.baseUrl}?page=${page}?&pageSize=10`
     );
   }
 

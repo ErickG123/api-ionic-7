@@ -23,7 +23,7 @@ export class PokemonsPage implements OnInit {
 
   async loadPokemons(event?: InfiniteScrollCustomEvent) {
     const loading = await this.loadingCtrl.create({
-      message: 'Loading..',
+      message: 'Carregando...',
       spinner: 'bubbles'
     });
     await loading.present();
